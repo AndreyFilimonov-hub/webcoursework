@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#services">Сервис</a>
+                <a href="#team">Команда</a>
+                <a href="#contacts">Контакты</a>
+                <a href="#offers">Услуги</a>
+            </nav>
+
+            <a href="tel:+79136335233" class="header-btn">Позвонить</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="image/boger-logo.png" alt="Логотип" class="hero-logo">
+
+            <h1 class="hero-title">МУЖСКАЯ ПАРИКМАХЕРСКАЯ</h1>
+            <p class="hero-subtitle">Добро пожаловать в нашу мужскую парикмахерскую — здесь опытные мастера помогут вам
+                привести внешний вид в порядок и приятно провести время.</p>
+
+            <div class="hero-buttons">
+                <a href="#booking" class="btn primary">Записаться</a>
+                <a href="https://vk.com/boger.hair" class="btn secondary" target="_blank">Познакомиться</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="service" id="services">
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="image/service.png" alt="Сервис" class="grid-icon">
+                <h3 class="grid-title">Сервис</h3>
+                <p class="grid-desc">Индивидуальный подход к каждому клиенту</p>
+            </div>
+            <div class="grid-item">
+                <img src="image/quality.png" alt="Качество" class="grid-icon">
+                <h3 class="grid-title">Качество</h3>
+                <p class="grid-desc">Услуги высокого качества</p>
+            </div>
+            <div class="grid-item">
+                <img src="image/experience.png" alt="Стаж" class="grid-icon">
+                <h3 class="grid-title">Стаж</h3>
+                <p class="grid-desc">Мастера с опытом от 3 лет</p>
+            </div>
+            <div class="grid-item">
+                <img src="image/care.png" alt="Забота" class="grid-icon">
+                <h3 class="grid-title">Забота</h3>
+                <p class="grid-desc">Стрижем детей любого возраста с душой</p>
+            </div>
+            <div class="grid-item">
+                <img src="image/comfort.png" alt="Комфорт" class="grid-icon">
+                <h3 class="grid-title">Комфорт и уют</h3>
+                <p class="grid-desc">Обеспечиваем комфортные условия для наших клиентов.</p>
+            </div>
+            <div class="grid-item">
+                <img src="image/professionalism.png" alt="Профессионализм" class="grid-icon">
+                <h3 class="grid-title">Профессионализм</h3>
+                <p class="grid-desc">Мастера - профессионалы своего дела</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="offers" id="offers">
+        <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="master">Услуги мастера</button>
+            <button class="tab-btn" data-tab="senior">Услуги старшего мастера</button>
+            <button class="tab-btn" data-tab="top">Услуги топ-мастера</button>
+            <button class="tab-btn" data-tab="care">Уход</button>
+        </div>
+
+        <div class="tab-content active" id="master">
+            <div class="service-grid">
+                <div class="service-column">
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка</span><span>1400₽</span></div>
+                        <p>Профессиональный подбор стрижки с учётом пожеланий. Выполняется ножницами, машинками и
+                            бритвой. Мытьё головы до и после стрижки. Укладка. Подбор укладочного средства для
+                            домашнего
+                            ухода.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка машинкой</span><span>800₽</span></div>
+                        <p>Выполняется исключительно машинкой с использованием до двух насадок. Мытьё головы до и
+                            после
+                            стрижки.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Детская стрижка</span><span>1000₽</span></div>
+                        <p>Включает в себя стрижку для мужчины и ребенка до 12ти лет. Профессиональный подбор
+                            стрижки.
+                            Мытьё головы до и после стрижки. Профессиональные средства для мытья и укладки.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка + борода</span><span>2100₽</span></div>
+                        <p>Комплекс из стрижки и оформления бороды.</p>
+                    </div>
+                </div>
+
+                <div class="service-column">
+                    <div class="service-item">
+                        <div class="service-header"><span>Оформление бороды</span><span>800₽</span></div>
+                        <p>Профессиональная коррекция формы бороды с учетом индивидуальных особенностей.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Опасное бритье</span><span>1000₽</span></div>
+                        <p>Профессиональное бритьё с использованием качественных инструментов.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Отец + сын</span><span>2100₽</span></div>
+                        <p>Включает в себя стрижку для мужчины и ребенка до 12ти лет. Профессиональный подбор
+                            стрижки.
+                            Мытьё головы до и после стрижки. Профессиональные средства для мытья и укладки.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка машинкой + борода</span><span>1600₽</span></div>
+                        <p>Комплекс из стрижки машинкой (до двух насадок) и оформления бороды (подбор и создание
+                            формы
+                            бороды, четких контуров и переходов с помощью ножиц и машинок. Нанесение средств для
+                            ухода
+                            за бородой).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="senior">
+            <div class="service-grid">
+                <div class="service-column">
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка</span><span>1600₽</span></div>
+                        <p>Профессиональный подбор стрижки с учётом пожеланий. Выполняется ножницами, машинками и
+                            бритвой. Мытьё головы до и после стрижки. Укладка. Подбор укладочного средства для
+                            домашнего
+                            ухода.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка машинкой</span><span>1000₽</span></div>
+                        <p>Выполняется исключительно машинкой с использованием до двух насадок. Мытьё головы до и
+                            после
+                            стрижки.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Детская стрижка</span><span>1200₽</span></div>
+                        <p>Включает в себя стрижку для мужчины и ребенка до 12ти лет. Профессиональный подбор
+                            стрижки.
+                            Мытьё головы до и после стрижки. Профессиональные средства для мытья и укладки.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка + борода</span><span>2400₽</span></div>
+                        <p>Комплекс из стрижки и оформления бороды.</p>
+                    </div>
+                </div>
+
+                <div class="service-column">
+                    <div class="service-item">
+                        <div class="service-header"><span>Оформление бороды</span><span>1000₽</span></div>
+                        <p>Профессиональная коррекция формы бороды с учетом индивидуальных особенностей.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Опасное бритье</span><span>1200₽</span></div>
+                        <p>Профессиональное бритьё с использованием качественных инструментов.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Отец + сын</span><span>2400₽</span></div>
+                        <p>Включает в себя стрижку для мужчины и ребенка до 12ти лет. Профессиональный подбор
+                            стрижки.
+                            Мытьё головы до и после стрижки. Профессиональные средства для мытья и укладки.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка машинкой + борода</span><span>1900₽</span></div>
+                        <p>Комплекс из стрижки машинкой (до двух насадок) и оформления бороды (подбор и создание
+                            формы
+                            бороды, четких контуров и переходов с помощью ножиц и машинок. Нанесение средств для
+                            ухода
+                            за бородой).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="top">
+            <div class="service-grid">
+                <div class="service-column">
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка</span><span>1900₽</span></div>
+                        <p>Профессиональный подбор стрижки с учётом пожеланий. Выполняется ножницами, машинками и
+                            бритвой. Мытьё головы до и после стрижки. Укладка. Подбор укладочного средства для
+                            домашнего
+                            ухода.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка машинкой</span><span>1300₽</span></div>
+                        <p>Выполняется исключительно машинкой с использованием до двух насадок. Мытьё головы до и
+                            после
+                            стрижки.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Детская стрижка</span><span>1500₽</span></div>
+                        <p>Включает в себя стрижку для мужчины и ребенка до 12ти лет. Профессиональный подбор
+                            стрижки.
+                            Мытьё головы до и после стрижки. Профессиональные средства для мытья и укладки.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка + борода</span><span>2700₽</span></div>
+                        <p>Комплекс из стрижки и оформления бороды.</p>
+                    </div>
+                </div>
+
+                <div class="service-column">
+                    <div class="service-item">
+                        <div class="service-header"><span>Оформление бороды</span><span>1300₽</span></div>
+                        <p>Профессиональная коррекция формы бороды с учетом индивидуальных особенностей.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Опасное бритье</span><span>1200₽</span></div>
+                        <p>Профессиональное бритьё с использованием качественных инструментов.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Отец + сын</span><span>2900₽</span></div>
+                        <p>Включает в себя стрижку для мужчины и ребенка до 12ти лет. Профессиональный подбор
+                            стрижки.
+                            Мытьё головы до и после стрижки. Профессиональные средства для мытья и укладки.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Стрижка машинкой + борода</span><span>2200₽</span></div>
+                        <p>Комплекс из стрижки машинкой (до двух насадок) и оформления бороды (подбор и создание
+                            формы
+                            бороды, четких контуров и переходов с помощью ножиц и машинок. Нанесение средств для
+                            ухода
+                            за бородой).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="care">
+            <div class="service-grid">
+                <div class="service-column">
+                    <div class="service-item">
+                        <div class="service-header"><span>Тонирование волос</span><span>1300₽</span></div>
+                        <p>Отличный способ скрыть нежелательную седину и придать волосу натуральный насыщенный цвет.
+                            Держится до 3х недель, не возникает эффекта отросших корней.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Уход за лицом от MEN'S PRIORITY</span><span>1200₽</span></div>
+                        <p>Уникальный комплекс SPA процедур для лица с эффектом упругости и подтянутости кожи. Результат
+                            - здоровая и упругая кожа лица.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>SPA-Уход за кожей головы</span><span>800₽</span></div>
+                        <p>Глубокая чистка кожи головы, стимуляция роста волос.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Массаж лица</span><span>400₽</span></div>
+                        <p>Расслабляющий массаж для улучшения кровообращения и снятия напряжения.</p>
+                    </div>
+                </div>
+
+                <div class="service-column">
+                    <div class="service-item">
+                        <div class="service-header"><span>Коррекция воском(одна
+                                зона\комплекс)</span><span>200\500₽</span></div>
+                        <p>Услуга по удалению нежелательных волос нос/уши/межбровье с использованием воска.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Укладка и окантовка</span><span>500₽</span></div>
+                        <p>Мытье головы, сушка и укладка стайлингом, которая продержится весь день. Так же подбривание
+                            окантовочный линий для обновления свежести стрижки.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Мужской маникюр</span><span>от 1600₽</span></div>
+                        <p>Уход за руками: обработка ногтей и кутикулы, придание формы. Результат - ухоженный и опрятный
+                            вид. Дополнительно можно нанести глянцевое\матовое покрытие.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-header"><span>Окрашивание волос</span><span>от 3500₽</span></div>
+                        <p>Изменение цвета профессиональной краской..</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="images">
+        <div class="image-grid">
+            <div class="left-column">
+                <img src="image/barbershop.jpg" alt="Картинка 1" class="grid-img square">
+                <img src="image/barbershop.jpg" alt="Картинка 2" class="grid-img square">
+            </div>
+            <div class="right-column">
+                <img src="image/barbershop.jpg" alt="Картинка 3" class="grid-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <button class="carousel-btn left">&#10094;</button>
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    <div class="card"><img src="image9.jpg">
+                        <h3>Елена Лысенко</h3>
+                        <p>Мастер мужского маникюра</p>
+                    </div>
+                    <div class="card"><img src="image1.jpg">
+                        <h3>Ангелина Штануова</h3>
+                        <p>Топ-мастер</p>
+                    </div>
+                    <div class="card"><img src="image2.jpg">
+                        <h3>Виталий Владыка</h3>
+                        <p>Старший мастер</p>
+                    </div>
+                    <div class="card"><img src="image3.jpg">
+                        <h3>Яна Колтунова</h3>
+                        <p>Старший мастер</p>
+                    </div>
+                    <div class="card"><img src="image4.jpg">
+                        <h3>Артем Плужников</h3>
+                        <p>Топ-мастер</p>
+                    </div>
+                    <div class="card"><img src="image5.jpg">
+                        <h3>Сергей Богер</h3>
+                        <p>Основатель</p>
+                        <p>Арт-директор</p>
+                    </div>
+                    <div class="card"><img src="image6.jpg">
+                        <h3>Екатерина Нехаева</h3>
+                        <p>Управляющая</p>
+                        <p>Контент-мейкер</p>
+                    </div>
+                    <div class="card"><img src="image7.jpg">
+                        <h3>Дарья Крафт</h3>
+                        <p>Администратор</p>
+                    </div>
+                    <div class="card"><img src="image8.jpg">
+                        <h3>Богдан Рябоконь</h3>
+                        <p>Мастер</p>
+                    </div>
+                    <div class="card"><img src="image9.jpg">
+                        <h3>Яна Касьянова</h3>
+                        <p>Мастер</p>
+                    </div>
+                    <div class="card"><img src="image9.jpg">
+                        <h3>Елена Мурастова</h3>
+                        <p>Мастер мужского маникюра</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-btn right">&#10095;</button>
+    </section>
+
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
