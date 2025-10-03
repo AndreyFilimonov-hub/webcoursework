@@ -40,53 +40,78 @@ const cards = Array.from(carousel.children);
 const btnLeft = document.querySelector('.carousel-btn.left');
 const btnRight = document.querySelector('.carousel-btn.right');
 
-const cardWidth = cards[0].offsetWidth + 40; // ширина + gap
-let index = 0; // текущий активный элемент
+const gap = 40;
+const cardWidth = cards[0].offsetWidth + gap;
+const total = cards.length;
+const clonesCount = 3;
 
-// клонируем элементы для зацикливания
-const clonesBefore = cards.map(c => c.cloneNode(true));
-const clonesAfter = cards.map(c => c.cloneNode(true));
-
-clonesBefore.forEach(c => carousel.insertBefore(c, carousel.firstChild));
+const clonesBefore = cards.slice(-clonesCount).map(c => c.cloneNode(true));
+const clonesAfter = cards.slice(0, clonesCount).map(c => c.cloneNode(true));
+for (let i = clonesBefore.length - 1; i >= 0; i--) {
+  carousel.insertBefore(clonesBefore[i], carousel.firstChild);
+}
 clonesAfter.forEach(c => carousel.appendChild(c));
 
 const allCards = Array.from(carousel.children);
-const total = cards.length;
+let index = clonesCount;
+let isAnimating = false;
 
-// стартовая позиция — первый оригинальный элемент в центре
-index = total; 
-updateCarousel();
-
-// функция для обновления трансформации и активного класса
-function updateCarousel() {
+function updateCarousel(animate = true) {
   const offset = (carousel.parentElement.offsetWidth - cardWidth) / 2;
+  carousel.style.transition = animate ? 'transform 0.5s ease' : 'none';
   carousel.style.transform = `translateX(${-cardWidth * index + offset}px)`;
+
   allCards.forEach(c => c.classList.remove('active'));
-  allCards[index].classList.add('active');
+  allCards[index]?.classList.add('active');
 }
 
-// переключение
-function move(step){
+function move(step) {
+  if (isAnimating) return;
+  isAnimating = true;
+
   index += step;
-  carousel.style.transition = 'transform 0.5s ease';
-  updateCarousel();
-  carousel.addEventListener('transitionend', handleLoop);
+  updateCarousel(true);
+
+  carousel.addEventListener('transitionend', handleLoop, { once: true });
 }
 
-// корректное зацикливание
-function handleLoop(){
-  carousel.removeEventListener('transitionend', handleLoop);
-  if(index >= total*2){
-    index -= total;
-    carousel.style.transition = 'none';
-    updateCarousel();
+function handleLoop() {
+  if (index >= total + clonesCount) {
+    carousel.classList.add('no-card-transition');
+
+    index -= total;               
+    updateCarousel(false);        
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        carousel.classList.remove('no-card-transition');
+        isAnimating = false;
+      });
+    });
+    return;
   }
-  if(index < total){
-    index += total;
-    carousel.style.transition = 'none';
-    updateCarousel();
+
+  if (index < clonesCount) {
+    carousel.classList.add('no-card-transition');
+
+    index += total;               
+    updateCarousel(false);        
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        carousel.classList.remove('no-card-transition');
+        isAnimating = false;
+      });
+    });
+    return;
   }
+
+  isAnimating = false;
 }
 
 btnLeft.addEventListener('click', () => move(-1));
 btnRight.addEventListener('click', () => move(1));
+
+window.addEventListener('resize', () => updateCarousel(false));
+
+updateCarousel(false);

@@ -310,14 +310,6 @@ body {
   line-height: 1.3;
 }
 
-/* Сброс стандартных отступов */
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #1a1a1a; /* общий фон для страницы */
-  font-family: 'Segoe UI', sans-serif;
-}
-
 /* Images Section */
 .images {
   height: 100vh;
@@ -344,19 +336,41 @@ html, body {
   height: 100%;
   object-fit: cover;
   display: block;
-  margin: 0; /* убираем возможные отступы */
+  margin: 0;
 }
 
 /* Team / Carousel Section */
-.carousel-section {
+.team {
   position: relative;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: visible; /* чтобы масштаб центральной карточки не обрезался */
-  margin: 0; /* убираем возможные внешние отступы */
+  overflow: hidden;
+  margin: 0;
   background: #1a1a1a;
+}
+
+.team-title {
+  text-align: center;
+  color: #ffee00;
+  font-size: 2rem;
+  z-index: 2;
+  position: relative;
+  font-weight: 700;
+  margin: 10px 0 0;
+}
+
+.team-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  z-index: 2;
+  position: relative;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+  margin-bottom: 120px;
 }
 
 .carousel-wrapper {
@@ -369,6 +383,11 @@ html, body {
   gap: 40px;
   transition: transform 0.5s ease;
 }
+
+.carousel.no-card-transition .card {
+  transition: none !important;
+}
+
 
 .card {
   flex: 0 0 260px;
