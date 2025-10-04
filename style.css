@@ -155,8 +155,13 @@ body {
 }
 
 .btn {
+  width: 120px;
+  height: 40px;
   padding: 12px 28px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
@@ -164,6 +169,7 @@ body {
 
 .btn.primary {
   background: #ffee00;
+  font-size: 1.2rem;
   color: black;
 }
 
@@ -173,6 +179,7 @@ body {
 
 .btn.secondary {
   background: #ffee00;
+  font-size: 1.2rem;
   color: black;
 }
 
@@ -380,7 +387,9 @@ body {
 
 .carousel {
   display: flex;
-  gap: 40px;
+  gap: 37px;
+  justify-content: center;
+  align-items: center;
   transition: transform 0.5s ease;
 }
 
