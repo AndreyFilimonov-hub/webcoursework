@@ -43,7 +43,7 @@ const btnRight = document.querySelector('.carousel-btn.right');
 const gap = 40;
 const cardWidth = cards[0].offsetWidth + gap;
 const total = cards.length;
-const clonesCount = 3;
+const clonesCount = 4;
 
 const clonesBefore = cards.slice(-clonesCount).map(c => c.cloneNode(true));
 const clonesAfter = cards.slice(0, clonesCount).map(c => c.cloneNode(true));

@@ -387,9 +387,10 @@ body {
 
 .carousel {
   display: flex;
-  gap: 37px;
+  gap: 40px;
   justify-content: center;
   align-items: center;
+  padding-left: 15px;
   transition: transform 0.5s ease;
 }
 
