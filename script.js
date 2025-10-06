@@ -10,10 +10,8 @@ window.addEventListener('scroll', () => {
   }
 
   if (currentScroll > lastScroll) {
-    // Скролл вниз — скрываем шапку
     header.classList.add('hidden');
   } else {
-    // Скролл вверх — показываем шапку
     header.classList.remove('hidden');
   }
 
