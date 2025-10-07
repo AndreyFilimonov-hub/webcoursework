@@ -189,6 +189,153 @@ body {
   scale: 1.1;
 }
 
+/* Model Window */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #2a2a2a;
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 90%;
+  max-height: 80vh;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #ffee00;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.modal-close:hover {
+  color: white;
+}
+
+.modal-title {
+  color: #ffee00;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.modal-subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #ffee00;
+  font-size: 1rem;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: #1a1a1a;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  border: 1px solid #ffee00;
+}
+
+.booking-form .btn.primary {
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 1.1rem;
+}
+
+.booking-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#servicesCheckboxes div {
+  display: flex;
+  align-items: center;
+}
+
+#servicesCheckboxes input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ffee00;
+}
+
+#servicesCheckboxes {
+  max-height: 200px;
+  overflow-y: auto; 
+  padding-right: 6px; 
+}
+
+#servicesCheckboxes::-webkit-scrollbar {
+  width: 6px;
+}
+
+#servicesCheckboxes::-webkit-scrollbar-thumb {
+  background-color: #ffee00;
+  border-radius: 3px;
+}
+
+#servicesCheckboxes::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
 /* Service */
 .service {
   background-color: #1a1a1a;
@@ -597,7 +744,8 @@ body {
   font-size: 1.1rem;
 }
 
-.contact-item a, .contact-item p {
+.contact-item a,
+.contact-item p {
   color: white;
   font-size: 1rem;
   text-decoration: none;
@@ -631,7 +779,49 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  .contacts-map, .contacts-info {
+
+  .contacts-map,
+  .contacts-info {
     max-width: 100%;
   }
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 1000;
+  background: #ffee00;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scrollTopBtn:hover {
+  background: #fff200;
+  transform: scale(1.15);
+}
+
+.scroll-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+#scrollTopBtn:hover .scroll-icon {
+  transform: translateY(-2px);
 }

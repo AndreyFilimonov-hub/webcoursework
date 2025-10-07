@@ -77,8 +77,8 @@ function handleLoop() {
   if (index >= total + clonesCount) {
     carousel.classList.add('no-card-transition');
 
-    index -= total;               
-    updateCarousel(false);        
+    index -= total;
+    updateCarousel(false);
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -92,8 +92,8 @@ function handleLoop() {
   if (index < clonesCount) {
     carousel.classList.add('no-card-transition');
 
-    index += total;               
-    updateCarousel(false);        
+    index += total;
+    updateCarousel(false);
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -113,3 +113,100 @@ btnRight.addEventListener('click', () => move(1));
 window.addEventListener('resize', () => updateCarousel(false));
 
 updateCarousel(false);
+
+const openModalBtn = document.querySelector('.btn.primary[href="#booking"]');
+const modal = document.getElementById('bookingModal');
+const closeModalBtn = document.getElementById('closeModal');
+
+const masterSelect = document.getElementById('master-choose');
+const servicesContainer = document.getElementById('servicesCheckboxes');
+
+openModalBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  modal.classList.add('active');
+});
+
+closeModalBtn.addEventListener('click', () => {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+const barberServices = ['Стрижка', 'Стрижка машинкой', 'Детская стрижка', 'Стрижка + борода', 'Оформление бороды', 'Опасное бритье', 'Отец + сын', 'Стрижка машинкой + борода', 'Тонирование волос', 'Уход за лицом от MEN\'S PRIORITY', 'SPA-Уход за кожей головы', 'Коррекция воском', 'Укладка и окантовка']
+const manicureServices = ['Мужской маникюр']
+const yanaKoltunovaServices = [...barberServices, 'Массаж лица', 'Окрашивание волос']
+const artemPluzhnikovSerives = [...barberServices, 'Окрашивание волос']
+
+const servicesByMaster = {
+  '1': barberServices,
+  '2': artemPluzhnikovSerives,
+  '3': barberServices,
+  '4': yanaKoltunovaServices,
+  '5': barberServices,
+  '6': barberServices,
+  '7': barberServices,
+  '8': manicureServices,
+  '9': manicureServices
+};
+
+masterSelect.addEventListener('change', () => {
+  const masterId = masterSelect.value;
+
+  servicesContainer.innerHTML = '';
+
+  if (servicesByMaster[masterId]) {
+    servicesByMaster[masterId].forEach((service, index) => {
+      const id = `service_${masterId}_${index}`;
+
+      const checkboxWrapper = document.createElement('div');
+      checkboxWrapper.style.marginBottom = '6px';
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = id;
+      checkbox.name = 'services';
+      checkbox.value = service;
+
+      const label = document.createElement('label');
+      label.htmlFor = id;
+      label.textContent = service;
+      label.style.marginLeft = '8px';
+      label.style.color = 'white';
+
+      checkboxWrapper.appendChild(checkbox);
+      checkboxWrapper.appendChild(label);
+      servicesContainer.appendChild(checkboxWrapper);
+    });
+  }
+});
+
+const bookingForm = document.querySelector('.booking-form');
+
+bookingForm.addEventListener('submit', (e) => {
+  const checkedServices = servicesContainer.querySelectorAll('input[type="checkbox"]:checked');
+  if (checkedServices.length === 0) {
+    e.preventDefault();
+    alert('Пожалуйста, выберите хотя бы одну услугу');
+  }
+});
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});

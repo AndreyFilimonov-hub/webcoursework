@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Барбершоп Богер в Омске на Карла Либкнехта 26</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -35,6 +35,47 @@
                 <a href="https://vk.com/boger.hair" class="btn secondary" target="_blank">Познакомиться</a>
             </div>
         </div>
+
+        <div class="modal" id="bookingModal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeModal">&times;</button>
+
+                <h2 class="modal-title">Онлайн-запись</h2>
+                <p class="modal-subtitle">Выберите мастера, услугу и дату визита</p>
+
+                <form class="booking-form">
+                    <div class="form-group">
+                        <label for="master">Мастер:</label>
+                        <select id="master-choose" name="master" required>
+                            <option value="">Выберите мастера</option>
+                            <option value="1">Сергей Богер — Арт-директор</option>
+                            <option value="2">Артем Плужников — Топ-мастер</option>
+                            <option value="3">Ангелина Шатунова — Топ-мастер</option>
+                            <option value="4">Яна Колтунова — Старший мастер</option>
+                            <option value="5">Виталий Владыка — Старший мастер</option>
+                            <option value="6">Яна Касьянова — Мастер</option>
+                            <option value="7">Богдан Рябоконь — Мастер</option>
+                            <option value="8">Елена Мурастова — Мастер мужского маникюра</option>
+                            <option value="9">Елена Лысенко — Мастер мужского маникюра</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="servicesContainer">
+                        <label>Услуги:</label>
+                        <div id="servicesCheckboxes">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Дата и время:</label>
+                        <input type="datetime-local" id="date" name="date" required>
+                    </div>
+
+                    <button type="submit" class="btn primary">Записаться</button>
+                </form>
+            </div>
+        </div>
+
     </section>
 
     <section class="service" id="services">
@@ -382,7 +423,8 @@
 
     <section class="contacts" id="contacts">
         <h2 class="contacts-title">Контакты</h2>
-        <p class="contacts-subtitle">Уютная парикмахерская в Омске. Опытные мастера от 3 лет. Индивидуальный подход к каждому клиенту.</p>
+        <p class="contacts-subtitle">Уютная парикмахерская в Омске. Опытные мастера от 3 лет. Индивидуальный подход к
+            каждому клиенту.</p>
 
         <div class="contacts-content">
             <div class="contacts-info">
@@ -420,6 +462,11 @@
         </div>
     </section>
 
+    <button id="scrollTopBtn" title="Наверх">
+        <svg class="scroll-icon" viewBox="0 0 24 36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0 L0 12 H8 V36 H16 V12 H24 Z" fill="#1a1a1a" />
+        </svg>
+    </button>
 
     <script src="script.js" defer></script>
 </body>
