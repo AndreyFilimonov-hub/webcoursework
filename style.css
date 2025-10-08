@@ -825,3 +825,24 @@ body {
 #scrollTopBtn:hover .scroll-icon {
   transform: translateY(-2px);
 }
+
+.footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer a {
+  color: #ffee00;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  font-size: 0.9rem;
+  color: #ccc;
+}
