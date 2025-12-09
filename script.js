@@ -119,7 +119,7 @@ const modal = document.getElementById('bookingModal');
 const closeModalBtn = document.getElementById('closeModal');
 
 const masterSelect = document.getElementById('master-choose');
-const servicesContainer = document.getElementById('servicesCheckboxes');
+const servicesCheckboxes = document.getElementById('servicesCheckboxes');
 
 openModalBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -156,7 +156,7 @@ const servicesByMaster = {
 masterSelect.addEventListener('change', () => {
   const masterId = masterSelect.value;
 
-  servicesContainer.innerHTML = '';
+  servicesCheckboxes.innerHTML = '';
 
   if (servicesByMaster[masterId]) {
     servicesByMaster[masterId].forEach((service, index) => {
@@ -179,19 +179,39 @@ masterSelect.addEventListener('change', () => {
 
       checkboxWrapper.appendChild(checkbox);
       checkboxWrapper.appendChild(label);
-      servicesContainer.appendChild(checkboxWrapper);
+      servicesCheckboxes.appendChild(checkboxWrapper);
     });
   }
 });
 
 const bookingForm = document.querySelector('.booking-form');
+const servicesContainer = document.querySelector('#servicesContainer');
 
 bookingForm.addEventListener('submit', (e) => {
-  const checkedServices = servicesContainer.querySelectorAll('input[type="checkbox"]:checked');
-  if (checkedServices.length === 0) {
-    e.preventDefault();
-    alert('Пожалуйста, выберите хотя бы одну услугу');
-  }
+    const nameField = document.querySelector('#client-name');
+    const phoneField = document.querySelector('#client-phone');
+    const checkedServices = servicesContainer.querySelectorAll('input[type="checkbox"]:checked');
+
+    if (nameField.value.trim().length < 2) {
+        e.preventDefault();
+        alert('Пожалуйста, введите корректное имя');
+        return;
+    }
+
+    const phone = phoneField.value.trim();
+    const phoneRegex = /^(\+7|8)?[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
+
+    if (!phoneRegex.test(phone)) {
+        e.preventDefault();
+        alert('Введите корректный номер телефона');
+        return;
+    }
+
+    if (checkedServices.length === 0) {
+        e.preventDefault();
+        alert('Пожалуйста, выберите хотя бы одну услугу');
+        return;
+    }
 });
 
 const scrollBtn = document.getElementById("scrollTopBtn");
