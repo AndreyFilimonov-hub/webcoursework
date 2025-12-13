@@ -186,6 +186,7 @@ masterSelect.addEventListener('change', () => {
 
 const bookingForm = document.querySelector('.booking-form');
 const servicesContainer = document.querySelector('#servicesContainer');
+const consentCheckbox = document.getElementById('consent');
 
 bookingForm.addEventListener('submit', (e) => {
     const nameField = document.querySelector('#client-name');
@@ -210,6 +211,12 @@ bookingForm.addEventListener('submit', (e) => {
     if (checkedServices.length === 0) {
         e.preventDefault();
         alert('Пожалуйста, выберите хотя бы одну услугу');
+        return;
+    }
+
+    if (!consentCheckbox.checked) {
+        e.preventDefault();
+        alert('Необходимо согласие на обработку персональных данных');
         return;
     }
 });
